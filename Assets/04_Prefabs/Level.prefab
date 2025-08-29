@@ -161,6 +161,7 @@ MonoBehaviour:
   _end: {fileID: 8764440620355043106}
   _followCam: {fileID: 368050746830972063}
   _endCam: {fileID: 987954204441310665}
+  _startPos: {fileID: 5114695250320260574}
 --- !u!1 &2553197973066978179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,7 +2587,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:

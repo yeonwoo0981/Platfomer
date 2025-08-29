@@ -3,6 +3,7 @@ using System.Linq;
 using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class Level : MonoBehaviour
     private List<Collected> _collecteds;
     [SerializeField] private End _end;
     [SerializeField] private CinemachineCamera _followCam, _endCam;
+    [SerializeField] private Transform _startPos;
     
+    private bool _levelCleared;
+
     private void Start()
     {
         Transform fruitTrm = transform.Find("Fruit");
@@ -19,23 +23,24 @@ public class Level : MonoBehaviour
        _totalCount = _collecteds.Count;
        // 모든 과일의 이벤트를 구독 좋아요 알림설정까지.
        _collecteds.ForEach(collected => collected._onCollected += DecreaseCount);
-       
+
        _followCam.Priority = 10;
        _endCam.Priority = 5;
     }
-    
+
     public void DecreaseCount()
     {
         _totalCount--;
 
-        if (_totalCount == 0)
+        if (_totalCount <= 0 && !_levelCleared)
         {
+            _levelCleared = true;
             // 트로피 떨구기. 트떨.
             _endCam.Priority = 15;
             Debug.Log("트떨");
-            
+
             Sequence seq = DOTween.Sequence();
-            
+
             seq.AppendInterval(3f);
             seq.AppendCallback(() => _end.Show()); // 트등
             seq.AppendInterval(3f);
@@ -44,5 +49,11 @@ public class Level : MonoBehaviour
                 _endCam.Priority = 5;
             });
         }
+    }
+    public void SetUpLevel(Player patient)
+    {
+        _followCam.Follow = patient.transform;
+
+        patient.transform.position = _startPos.position;
     }
 }

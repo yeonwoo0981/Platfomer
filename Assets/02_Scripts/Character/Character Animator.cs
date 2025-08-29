@@ -20,18 +20,21 @@ public class CharacterAnimator : MonoBehaviour
     // 복습해볼겸 트리플 점프 애니메이션 제작
     private void Update()
     {
-        _animator.SetFloat(_velocityXHash, _playerInput.MoveDir.x);
-        _animator.SetFloat(_velocityYHash, _playerInput.MoveDir.y);
         if (_playerInput.MoveDir.x != 0 || _playerInput.MoveDir.y != 0)
         {
             _lastMoveDir = _playerInput.MoveDir;
             _isMoving = true;
+            _animator.SetFloat(_velocityXHash, _playerInput.MoveDir.x);
+            _animator.SetFloat(_velocityYHash, _playerInput.MoveDir.y);
+            _animator.speed = 1f;
         }
         else
         {
-            _animator.SetFloat(_velocityXHash, _lastMoveDir.x);
-            _animator.SetFloat(_velocityYHash, _lastMoveDir.y);
+            _lastMoveDir = _playerInput.MoveDir;
             _isMoving = false;
+            _animator.speed = 0f;
         }
     }
+    
+    
 }

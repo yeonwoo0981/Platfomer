@@ -48,7 +48,7 @@ public class End : MonoBehaviour
     {
         if (other.CompareTag("Player") && _state == EndState.Visible)
         {
-            SceneManager.LoadScene(1);
+            LevelManager.Instance.LoadNextLevel();
         }
     }
 }
