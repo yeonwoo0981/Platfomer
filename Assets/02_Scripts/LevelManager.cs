@@ -52,9 +52,9 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("클리어");
             ClearPanel clearPanel = FindAnyObjectByType<ClearPanel>();
-            clearPanel.gameObject.SetActive(true);
+            clearPanel._clearPanel.SetActive(true);
+            Time.timeScale = 0;
         }
         else LoadLevel(nextLevelNum);
-        SceneManager.LoadScene(1);
     }
 }

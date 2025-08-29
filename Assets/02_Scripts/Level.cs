@@ -14,7 +14,6 @@ public class Level : MonoBehaviour
     [SerializeField] private CinemachineCamera _followCam, _endCam;
     [SerializeField] private Transform _startPos;
     
-    private bool _levelCleared;
 
     private void Start()
     {
@@ -32,9 +31,8 @@ public class Level : MonoBehaviour
     {
         _totalCount--;
 
-        if (_totalCount <= 0 && !_levelCleared)
+        if (_totalCount >= 0)
         {
-            _levelCleared = true;
             // 트로피 떨구기. 트떨.
             _endCam.Priority = 15;
             Debug.Log("트떨");
