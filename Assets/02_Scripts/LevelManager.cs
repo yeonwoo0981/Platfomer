@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
         }
 
         _currentLevelNum = level;
+        CurrentStageManager.Save(_currentLevelNum);
         
         if (_currentLevel != null)
         {
