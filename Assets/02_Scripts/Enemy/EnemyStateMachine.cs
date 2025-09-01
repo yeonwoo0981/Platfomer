@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
     public enum EnemyStateType
@@ -7,16 +8,25 @@ using UnityEngine;
         Chase,
         Attack
     }
-public class EnemyStateMachine : MonoBehaviour
+public class EnemyStateMachine
 {
-    public void AddState(EnemyState state)
+    private Dictionary<EnemyStateType, EnemyState> _stateDictionary = new();
+    public EnemyState _currentState { get; private set; }
+    
+    public void AddState(EnemyStateType type, EnemyState state)
     {
-        
+        _stateDictionary.Add(type, state);
     }
-    private EnemyStateType _enemyStateType;
 
-    private void Start()
+    public void Initlalized(EnemyStateType stateState)
     {
-        _enemyStateType = EnemyStateType.Idle;
+        _currentState = _stateDictionary[stateState];
+        _currentState?.Enter();
+    }
+    public void ChangeState(EnemyStateType newState)
+    {
+        _currentState?.Exit();
+        _currentState = _stateDictionary[newState];
+        _currentState?.Enter();
     }
 }

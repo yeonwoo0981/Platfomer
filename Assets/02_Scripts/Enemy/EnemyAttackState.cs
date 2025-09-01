@@ -5,6 +5,7 @@ public class EnemyAttackState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        Debug.Log("공격람쥐");
         // 애니메이션
     }
     

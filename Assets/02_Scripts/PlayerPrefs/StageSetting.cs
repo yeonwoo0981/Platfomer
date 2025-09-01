@@ -28,6 +28,6 @@ public class StageSetting : MonoBehaviour
 
    private void UpdateUI()
    {
-      _stageLabel.text = $"현재 스테이지: {currentStage}";
+      _stageLabel.text = $"플레이 횟수: {currentStage}";
    }
 }

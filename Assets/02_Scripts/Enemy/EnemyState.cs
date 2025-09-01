@@ -6,6 +6,7 @@ public abstract class EnemyState
     public virtual void Enter()
     {
         // 상태 진입 행동
+        Debug.Log("다람쥐");
     }
     
     public virtual void UpdateState()

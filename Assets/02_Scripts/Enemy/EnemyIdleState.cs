@@ -5,6 +5,7 @@ public class EnemyIdleState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        Debug.Log("다람쥐가만히");
         // 감지 거리 내에서 플레이어를 찾지 못함
         // 이동을 하다가 정지
         // 애니메이션 실행
