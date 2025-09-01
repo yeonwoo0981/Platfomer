@@ -17659,7 +17659,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &6089918811852537459
 MonoBehaviour:
@@ -18095,7 +18095,6 @@ GameObject:
   - component: {fileID: 928412976101285676}
   - component: {fileID: 1684172849039077994}
   - component: {fileID: 7546934824005776184}
-  - component: {fileID: 955594550333098402}
   m_Layer: 5
   m_Name: ReStart
   m_TagString: Untagged
@@ -18120,8 +18119,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.037, y: 192}
-  m_SizeDelta: {x: 1048.5369, y: 178.4237}
+  m_AnchoredPosition: {x: 9.6388, y: 187.87708}
+  m_SizeDelta: {x: 1065.0284, y: 186.6695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &928412976101285676
 CanvasRenderer:
@@ -18144,7 +18143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18217,20 +18216,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &955594550333098402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3920711955977961056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3db2aaa44e27fc4690082167735699a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _angle: 90
-  _duration: 0.5
 --- !u!1 &4165494215572784867
 GameObject:
   m_ObjectHideFlags: 0
@@ -18343,8 +18328,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294939412
+  m_fontColor: {r: 0.07861614, g: 0.5775148, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18399,7 +18384,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 445.97595, y: 0, z: 122.01221, w: 86.24994}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18431,7 +18416,6 @@ GameObject:
   - component: {fileID: 2481683045624850555}
   - component: {fileID: 492619328094326203}
   - component: {fileID: 2014801920050018142}
-  - component: {fileID: 4543594871604885033}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -18456,8 +18440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.046, y: -200.01732}
-  m_SizeDelta: {x: 1048.5, y: 166.3894}
+  m_AnchoredPosition: {x: 413.38, y: -142}
+  m_SizeDelta: {x: 1093.3, y: 166.3894}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2481683045624850555
 CanvasRenderer:
@@ -18480,7 +18464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18553,20 +18537,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4543594871604885033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929244609302539301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3db2aaa44e27fc4690082167735699a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _angle: 180
-  _duration: 0.1
 --- !u!1 &5042851673288076510
 GameObject:
   m_ObjectHideFlags: 0
@@ -18689,8 +18659,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278255912
+  m_fontColor: {r: 0.15723258, g: 0.004449952, b: 0.004449952, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18745,7 +18715,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 122.012146, y: 0, z: 702.6222, w: 75.73178}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
