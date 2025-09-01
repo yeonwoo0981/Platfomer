@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public PlayerAnimator _playerAnimator { get; private set; }
     public Collider2D _collider { get; private set; }
 
+    public Transform _visualTrm;
+
     public bool IsGrounded => _playerMovement.IsGrounded;
     
     public bool _canDoubleJump = false;
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _collider = GetComponent<Collider2D>();
         _playerAnimator = GetComponentInChildren<PlayerAnimator>();
+        _visualTrm = transform.Find("VirtuaR");
         _playerInput.OnJumpKeyPressed += HandleJumpKeyPress;
         
     }
@@ -55,5 +58,18 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _playerMovement.SetXMove(_playerInput.MoveDir.x);
+        FlipX(_playerInput.MoveDir.x);
+    }
+
+    private void FlipX(float moveX)
+    {
+        if (moveX < 0)  // 왼쪽을 바라본다면
+        {
+            _visualTrm.eulerAngles = new Vector3(0f, 180f, 0f);
+        }
+        else if (moveX > 0)
+        {
+            _visualTrm.eulerAngles = new Vector3(0f, 0f, 0f);
+        }
     }
 }
