@@ -9,13 +9,16 @@ public class EnemyBrain : MonoBehaviour
     [SerializeField] private Vector2 _attackRange; // 공격범위
     [SerializeField] private LayerMask _playerMask;
 
+    private Enemy _enemy;
+    
     private void Awake()
     {
+        _enemy = GetComponent<Enemy>();
         _stateMachine = new EnemyStateMachine();
         
-        _stateMachine.AddState(EnemyStateType.Idle, new EnemyIdleState());
-        _stateMachine.AddState(EnemyStateType.Chase, new EnemyChaseState());
-        _stateMachine.AddState(EnemyStateType.Attack, new EnemyAttackState());
+        _stateMachine.AddState(EnemyStateType.Idle, new EnemyIdleState(_enemy));
+        _stateMachine.AddState(EnemyStateType.Chase, new EnemyChaseState(_enemy));
+        _stateMachine.AddState(EnemyStateType.Attack, new EnemyAttackState(_enemy));
     }
 
     private void Start()

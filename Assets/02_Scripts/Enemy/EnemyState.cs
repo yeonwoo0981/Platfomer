@@ -3,6 +3,13 @@ using UnityEngine;
 
 public abstract class EnemyState
 {
+    protected Enemy _enemy;
+    
+    public EnemyState(Enemy enemy)
+    {
+        _enemy = enemy;
+    }
+    
     public virtual void Enter()
     {
         // 상태 진입 행동

@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyState
 {
+    public EnemyAttackState(Enemy enemy) : base(enemy)
+    {
+    }
+
     public override void Enter()
     {
         base.Enter();
         Debug.Log("공격람쥐");
+        _enemy.MoveCompo.SetXMove(0f);
         // 애니메이션
     }
     

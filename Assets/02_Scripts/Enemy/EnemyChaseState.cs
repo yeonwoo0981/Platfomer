@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class EnemyChaseState : EnemyState
 {
+    public EnemyChaseState(Enemy enemy) : base(enemy)
+    {
+    }
+
     public override void Enter()
     {
         base.Enter();
@@ -12,6 +16,9 @@ public class EnemyChaseState : EnemyState
     public override void UpdateState()
     {
         // 플레이어를 향해 이동
+       Vector3 dir = _enemy._target.position - _enemy.transform.position;
+       _enemy.FlipX(-dir.x);
+       _enemy.MoveCompo.SetXMove(Mathf.Sign(dir.x)); // dir.x가 양수면 1, 음수면 -1, 0이면 0
         // 범위 밖으로 나가면 IdleState로 번경
         // 공격 범위 안에 있으면 AttackState로 변경
     }
