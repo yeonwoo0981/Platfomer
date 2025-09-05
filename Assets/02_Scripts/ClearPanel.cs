@@ -3,22 +3,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ClearPanel : MonoBehaviour
-{
-    public GameObject _clearPanel;
-
-    private void Start()
+{ 
+    public void OnClickResetStage()
     {
-        _clearPanel.gameObject.SetActive(false);
+        CurrentStageManager.Reset();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    public void RestartGame()
-   {
-       SceneManager.LoadScene(1);
-       Time.timeScale = 1;
-   }
-
-   public void QuitGame()
-   {
-       Application.Quit();
-   }
 }

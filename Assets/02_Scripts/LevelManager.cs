@@ -22,8 +22,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        _currentLevelNum = _startLevel;
-        LoadLevel(_startLevel);
+        _currentLevelNum = CurrentStageManager.Load();
+        LoadLevel(_currentLevelNum);
     }
 
     private void LoadLevel(int level)
@@ -52,10 +52,10 @@ public class LevelManager : MonoBehaviour
         if (nextLevelNum > _levelList.list.Count)
         {
             Debug.Log("클리어");
-            ClearPanel clearPanel = FindAnyObjectByType<ClearPanel>();
-            clearPanel._clearPanel.SetActive(true);
-            Time.timeScale = 0;
+            SceneManager.LoadScene(0);
         }
-        else LoadLevel(nextLevelNum);
+        else {
+            LoadLevel(nextLevelNum);
+        }
     }
 }
