@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 231335783}
   - component: {fileID: 231335784}
   - component: {fileID: 231335785}
+  - component: {fileID: 231335786}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -473,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d515d164f398748aa6f3149d02e0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 6
+  _speed: 4
   _jumpPower: 7
   _groundChecker: {fileID: 2114367539}
   _groundCheckerSize: {x: 0.7, y: 0.16}
@@ -497,6 +498,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 377359587494046802}
   _visualTrm: {fileID: 0}
+  AnimCompo: {fileID: 0}
+--- !u!114 &231335786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231335779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0995f5742bd404e82660196977b771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 410421372849598289, guid: 3f9b31a59e3e6e948bc73944e68bbbe6, type: 3}
+  _target: {fileID: 0}
 --- !u!1 &385994019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1593,7 @@ GameObject:
   - component: {fileID: 2046537347}
   - component: {fileID: 2046537349}
   - component: {fileID: 2046537348}
+  - component: {fileID: 2046537350}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -1676,6 +1693,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2046537350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046537346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcf1b34803266a4997b634845b78cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2114367538
 GameObject:
   m_ObjectHideFlags: 0

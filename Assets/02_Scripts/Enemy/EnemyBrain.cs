@@ -16,9 +16,9 @@ public class EnemyBrain : MonoBehaviour
         _enemy = GetComponent<Enemy>();
         _stateMachine = new EnemyStateMachine();
         
-        _stateMachine.AddState(EnemyStateType.Idle, new EnemyIdleState(_enemy));
-        _stateMachine.AddState(EnemyStateType.Chase, new EnemyChaseState(_enemy));
-        _stateMachine.AddState(EnemyStateType.Attack, new EnemyAttackState(_enemy));
+        _stateMachine.AddState(EnemyStateType.Idle, new EnemyIdleState(_enemy, "EnemyIdle", _stateMachine));
+        _stateMachine.AddState(EnemyStateType.Chase, new EnemyChaseState(_enemy, "EnemyRun", _stateMachine));
+        _stateMachine.AddState(EnemyStateType.Attack, new EnemyAttackState(_enemy, "EnemyAttack", _stateMachine));
     }
 
     private void Start()

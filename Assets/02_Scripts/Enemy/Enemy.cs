@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class Enemy : MonoBehaviour
     
     public Transform _visualTrm;
     
+    public Animator AnimCompo;
+    
     private void Awake()
     {
+        AnimCompo = GetComponentInChildren<Animator>();
         MoveCompo = GetComponent<PlayerMovement>();
         _visualTrm = transform.Find("Visual");
     }
