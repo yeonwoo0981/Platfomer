@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyHitState : EnemyState
 {
-    private float _hitDuration = 0.5f; // 피격 상태 유지 시간
-    private float _startTime;
+    private float _checkTimer = 0.5f;
+    private float _lastCheckTime;
 
     public EnemyHitState(Enemy enemy, string animName, EnemyStateMachine stateMachine) 
         : base(enemy, animName, stateMachine)
@@ -13,7 +13,7 @@ public class EnemyHitState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        _startTime = Time.time;
+        _lastCheckTime = Time.time;
         Debug.Log("쳐맞은 다람쥐");
         _enemy.MoveCompo.SetXMove(0f); 
     }
@@ -22,7 +22,7 @@ public class EnemyHitState : EnemyState
     {
         base.UpdateState();
         
-        if (Time.time >= _startTime + _hitDuration)
+        if (Time.time >= _lastCheckTime + _checkTimer)
         {
             if (_enemy.CheckChaseRange())
                 _stateMachine.ChangeState(EnemyStateType.Chase);
@@ -34,6 +34,5 @@ public class EnemyHitState : EnemyState
     public override void Exit()
     {
         base.Exit();
-        Debug.Log("Enemy Hit State 종료");
     }
 }
