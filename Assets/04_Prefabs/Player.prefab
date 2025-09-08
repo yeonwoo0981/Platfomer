@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 6565936491209280710}
   - component: {fileID: 7033371290228393813}
   - component: {fileID: 2589525484188075250}
+  - component: {fileID: 3892340775004703443}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -205,6 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb830ba5d06fd94d80004899900da3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthSystem: {fileID: 0}
+  _visualTrm: {fileID: 0}
   _canDoubleJump: 0
   _canTrippleJump: 0
 --- !u!114 &1578281656897516429
@@ -335,3 +338,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0.013613582, y: -0.04794669}
   m_Size: {x: 0.8103943, y: 0.8671818}
   m_Direction: 0
+--- !u!114 &3892340775004703443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185670248395355179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a792ed45e710c4e4c9d84739d03f08a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Health>k__BackingField: 0
+  _maxHealth: 10

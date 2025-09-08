@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
 {
     public PlayerInput _playerInput { get; private set; }
     public PlayerMovement _playerMovement { get; private set; }
+
+    public HealthSystem _healthSystem;
     
     public PlayerAnimator _playerAnimator { get; private set; }
     public Collider2D _collider { get; private set; }
@@ -18,6 +20,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        _healthSystem = GetComponent<HealthSystem>();
         _playerInput = GetComponent<PlayerInput>();
         _playerMovement = GetComponent<PlayerMovement>();
         _collider = GetComponent<Collider2D>();

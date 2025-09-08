@@ -6,7 +6,9 @@ using UnityEngine;
     {
         Idle,
         Chase,
-        Attack
+        Attack,
+        Hit,
+        Dead,
     }
 public class EnemyStateMachine
 {

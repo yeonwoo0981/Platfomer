@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
    public Transform _target;
 
    private EnemyAnimator _enemyAnimator;
+   public bool _isAnimationEnd;
 
    private void Awake()
    {
@@ -17,6 +18,7 @@ public class EnemyAttack : MonoBehaviour
    {
       _target =LevelManager.Instance.Player.transform;
       _enemyAnimator.OnAttackTrigger += Attack;
+      _enemyAnimator.OnEndTrigger += () => _isAnimationEnd = true;
    }
 
    public void Attack()
